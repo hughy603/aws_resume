@@ -43,3 +43,4 @@ eb init
 eb create
 eb open
   Go to configuration -> Data Tier -> Add new RDS Instance
+eb deploy
