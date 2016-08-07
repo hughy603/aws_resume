@@ -12,8 +12,8 @@ export DJANGO_SETTINGS_MODULE=config.settings.local
 export DJANGO_ALLOWED_HOSTS=resume.adamnrice.com
 
 # AWS Settings
-export DJANGO_AWS_ACCESS_KEY_ID=
-export DJANGO_AWS_STORAGE_BUCKET_NAME=
+export DJANGO_AWS_ACCESS_KEY_ID=AKIAJEJ2QGQCTZPPGOZQ
+export DJANGO_AWS_STORAGE_BUCKET_NAME=rice-adam-resume
 
 # Used with email
 export DJANGO_SERVER_EMAIL=

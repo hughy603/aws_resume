@@ -143,8 +143,13 @@ TEMPLATES[0]['OPTIONS']['loaders'] = [
 # DATABASE CONFIGURATION
 # ------------------------------------------------------------------------------
 # Raises ImproperlyConfigured exception if DATABASE_URL not in os.environ
-if False:#env('DATABASE_URL', None):
-    pass
+if env('DATABASE_URL', None):
+    DATABASES = {
+        # Raises ImproperlyConfigured exception if DATABASE_URL not in
+        # os.environ
+        'default': env.db('DATABASE_URL', default='postgres:///resume'),
+    }
+    DATABASES['default']['ATOMIC_REQUESTS'] = True
 else:
     DATABASES['default'] = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
