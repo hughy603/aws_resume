@@ -35,7 +35,11 @@ pip install -r requirements/local.txt
 sudo -u postgres createuser -D -A -P resume
 sudo -u postgres createdb -O resume resume
 
+## Create links to environment config
+ln -s `pwd`/config/postactivate ~/.virtualenvs/resume/bin/postactivate
 
-
-
-n -s `pwd`/config/postactivate ~/.virtualenvs/resume/bin/postactivate
+## Create EB Instance
+eb init
+eb create
+eb open
+  Go to configuration -> Data Tier -> Add new RDS Instance

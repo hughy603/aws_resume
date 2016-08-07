@@ -1,5 +1,5 @@
 [run]
-include = blog/*
+include = resume/*
 omit = *migrations*, *tests*
 plugins =
     django_coverage_plugin
