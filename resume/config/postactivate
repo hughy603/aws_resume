@@ -1,0 +1,27 @@
+#!/bin/bash
+. postactivatesecret
+
+# This hook is sourced after this virtualenv is activated.
+export POSTGRES_USER=resume
+export POSTRGES_DB=resume
+export DATABASE_URL=postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@127.0.0.1:5432/$POSTRGES_DB
+
+# General settings
+export DJANGO_ADMIN_URL=^admin/
+export DJANGO_SETTINGS_MODULE=config.settings.local
+export DJANGO_ALLOWED_HOSTS=resume.adamnrice.com
+
+# AWS Settings
+export DJANGO_AWS_ACCESS_KEY_ID=
+export DJANGO_AWS_STORAGE_BUCKET_NAME=
+
+# Used with email
+export DJANGO_SERVER_EMAIL=
+
+# Security! Better to use DNS for this task, but you can use redirect
+export DJANGO_SECURE_SSL_REDIRECT=False
+
+# django-allauth
+export DJANGO_ACCOUNT_ALLOW_REGISTRATION=True
+# Sentry
+export DJANGO_SENTRY_DSN=

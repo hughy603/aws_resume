@@ -1,0 +1,30 @@
+#!/bin/bash
+# This hook is sourced after this virtualenv is deactivated.
+
+
+unset POSTGRES_PASSWORD
+unset POSTGRES_USER
+unset DATABASE_URL
+
+# General settings
+unset DJANGO_ADMIN_URL
+unset DJANGO_SETTINGS_MODULE
+unset DJANGO_SECRET_KEY
+unset DJANGO_ALLOWED_HOSTS
+
+# AWS Settings
+unset DJANGO_AWS_ACCESS_KEY_ID
+unset DJANGO_AWS_SECRET_ACCESS_KEY
+unset DJANGO_AWS_STORAGE_BUCKET_NAME
+
+# Used with email
+unset DJANGO_MAILGUN_API_KEY
+unset DJANGO_SERVER_EMAIL
+
+# Security! Better to use DNS for this task, but you can use redirect
+unset DJANGO_SECURE_SSL_REDIRECT
+
+# django-allauth
+unset DJANGO_ACCOUNT_ALLOW_REGISTRATION
+# Sentry
+unset DJANGO_SENTRY_DSN

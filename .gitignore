@@ -1,0 +1,9 @@
+# Secret Local Settings
+resume/config/postactivatesecret
+*.pyc
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
+.ebextensions/00_secrets.config
