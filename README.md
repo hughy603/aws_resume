@@ -15,8 +15,8 @@ option_settings:
     "aws:elasticbeanstalk:application:environment":
         DJANGO_SECRET_KEY: "Django's Secret Key"
         DJANGO_AWS_ACCESS_KEY_ID: "AWS Access Key From IAM"
-        DJANGO_AWS_SECRET_ACCESS_KEY: "OLEvohnnPfKmMA7qlxlb5Bt+6d2QzF6SQ7jiQnLB"
-        DJANGO_ADMIN_URL: "blogadminportal"
+        DJANGO_AWS_SECRET_ACCESS_KEY: "fdsafdasB"
+        DJANGO_ADMIN_URL: "resumeadminportal"
 ```
 
 
@@ -44,3 +44,37 @@ eb create
 eb open
   Go to configuration -> Data Tier -> Add new RDS Instance
 eb deploy
+eb ssh
+
+## Create EB Storage Bucket
+Go to https://console.aws.amazon.com/s3/home?region=us-east-1#
+Create a bucket
+Add COORS Configuration
+Add bucket policy
+```
+{
+  "Version": "2008-10-17",
+  "Statement": [
+    {
+      "Sid": "PublicReadForGetBucketObjects",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "*"
+      },
+      "Action": "s3:GetObject",
+      "Resource": "arn:aws:s3:::rice-adam-resume/*"
+    },
+    {
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::539495328509:user/rice.adam"
+      },
+      "Action": "s3:*",
+      "Resource": [
+        "arn:aws:s3:::rice-adam-resume",
+        "arn:aws:s3:::rice-adam-resume/*"
+      ]
+    }
+  ]
+}
+```
