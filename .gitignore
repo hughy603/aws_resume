@@ -1,6 +1,7 @@
 # Secret Local Settings
 resume/config/postactivatesecret
 *.pyc
+*.ods*
 
 # Elastic Beanstalk Files
 .elasticbeanstalk/*

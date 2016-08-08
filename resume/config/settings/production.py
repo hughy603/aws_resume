@@ -116,7 +116,7 @@ STATIC_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, STATICFILES_LOCATION)
 # stored files.
 MEDIAFILES_LOCATION = 'media'
 DEFAULT_FILE_STORAGE = 'config.s3_storage.MediaStorage'
-MEDIA_URL = 'https://s3.amazonaws.com/%s/%s' % (AWS_STORAGE_BUCKET_NAME, MEDIAFILES_LOCATION)
+MEDIA_URL = 'https://s3.amazonaws.com/%s/%s/' % (AWS_STORAGE_BUCKET_NAME, MEDIAFILES_LOCATION)
 
 
 # EMAIL
