@@ -1,5 +1,6 @@
 # Secret Local Settings
 resume/config/postactivatesecret
+resume/resume/resume/migrations/
 *.pyc
 *.ods*
 
