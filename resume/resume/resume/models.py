@@ -9,7 +9,7 @@ class DateMixin(models.Model):
         abstract = True
 
 
-class User(DateMixin):
+class Person(DateMixin):
     first_name = models.CharField(max_length=255)
     last_name = models.CharField(max_length=255)
     email = models.EmailField()
