@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% load static %}{% load i18n %}
+
+{% block content %}
+  Resumes are below
+  <ul>
+  {% for resume in resume_list %}
+    <li><a href="{% url 'resume:resume_detail' resume.id %}">{{ resume.name }}</a></li>
+  {% endfor %}
+  </ul>
+{% endblock content %}
