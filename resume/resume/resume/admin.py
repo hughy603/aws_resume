@@ -1,12 +1,8 @@
 from django.contrib import admin
 
-from .models import (
-    Person,
-    Skill,
-    Resume,
-)
+from . import models
 
-
-admin.site.register(Person)
-admin.site.register(Skill)
-admin.site.register(Resume)
+admin.site.register(models.Person)
+admin.site.register(models.Skill)
+admin.site.register(models.Resume)
+admin.site.register(models.Education)

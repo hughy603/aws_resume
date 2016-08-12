@@ -33,7 +33,7 @@
         <div class="profile-container">
             <img class="profile" src="assets/images/profile.png" alt="" />
             <h1 class="name">{{ person }}</h1>
-            <h3 class="tagline">Full Stack Developer</h3>
+            <h3 class="tagline">{{ resume.title }}</h3>
         </div><!--//profile-container-->
 
         <div class="contact-container container-block">
@@ -80,20 +80,21 @@
                 {% endcomment %}
             </ul>
         </div><!--//contact-container-->
+
         <div class="education-container container-block">
             <h2 class="container-block-title">Education</h2>
+            {% for education in person.education.all %}
             <div class="item">
-                <h4 class="degree">MSc in Computer Science</h4>
-                <h5 class="meta">University of London</h5>
-                <div class="time">2011 - 2012</div>
+                <h4 class="degree">{{ education.degree }}</h4>
+                <h5 class="meta">{{ education.college }}</h5>
+                <div class="time">
+                    {{ education.start_year }} - {{ education.end_year }}
+                </div>
             </div><!--//item-->
-            <div class="item">
-                <h4 class="degree">BSc in Applied Mathematics</h4>
-                <h5 class="meta">Bristol University</h5>
-                <div class="time">2007 - 2011</div>
-            </div><!--//item-->
+            {% endfor %}
         </div><!--//education-container-->
 
+        {% comment %}
         <div class="languages-container container-block">
             <h2 class="container-block-title">Languages</h2>
             <ul class="list-unstyled interests-list">
@@ -101,16 +102,17 @@
                 <li>French <span class="lang-desc">(Professional)</span></li>
                 <li>Spanish <span class="lang-desc">(Professional)</span></li>
             </ul>
-        </div><!--//interests-->
+        </div><!--//languages-container-->
+        {% endcomment %}
 
         <div class="interests-container container-block">
             <h2 class="container-block-title">Interests</h2>
             <ul class="list-unstyled interests-list">
-                <li>Climbing</li>
-                <li>Snowboarding</li>
-                <li>Cooking</li>
+                <li>Skiing</li>
+                <li>Soccer</li>
+                <li>Yoyo-ing</li>
             </ul>
-        </div><!--//interests-->
+        </div><!--//interests-container-->
 
     </div><!--//sidebar-wrapper-->
 
